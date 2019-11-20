@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".scenes.top.login.LoginFragment">
+
+    <data class="FragmentLoginBinding">
+
+        <import type="android.text.InputType" />
+
+        <variable
+            name="viewModel"
+            type="com.fenrir.fenrirtemplate.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.fenrir.fenrirtemplate.ui.view.CustomToolbar
+                android:id="@+id/tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetEnd="?attr/actionBarSize"
+                android:background="@color/colorWhite"
+                app:contentInsetStartWithNavigation="0dp"
+                app:ct_navigationType="back">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/common_login"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp" />
+
+            </com.fenrir.fenrirtemplate.ui.view.CustomToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:id="@+id/username_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/edit_text_layout_background"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:text="@string/login_mail_address"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:background="@android:color/transparent"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="@={viewModel.email}"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                tools:text="username" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/password_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/edit_text_layout_background"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/username_linear_layout">
+
+            <TextView
+                android:id="@+id/password_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:text="@string/login_password"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp" />
+
+            <EditText
+                android:id="@+id/password_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/password_title_text"
+                android:layout_marginBottom="13dp"
+                android:background="@android:color/transparent"
+                android:importantForAutofill="no"
+                android:inputType="@{viewModel.showPassword ? InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD : InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT }"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:text="@={viewModel.password}"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack" />
+
+            <ImageButton
+                android:id="@+id/show_password_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:background="@null"
+                android:onClick="@{() -> viewModel.togglePasswordType()}"
+                android:paddingTop="5dp"
+                android:src="@{viewModel.showPassword ? @drawable/show_password_btn_hide : @drawable/show_password_btn_indicate, default=@drawable/icn_indicate_gray}"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/forget_password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:gravity="center"
+            android:text="@string/top_login_forgotten_password"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/password_relative_layout" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="284dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/big_button_background"
+            android:text="@string/top_login"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forget_password_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

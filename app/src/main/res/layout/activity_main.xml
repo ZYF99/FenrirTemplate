@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".scenes.activity.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--            <androidx.appcompat.widget.Toolbar-->
+            <!--                android:id="@+id/tool_bar"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="?attr/actionBarSize"-->
+            <!--                android:background="@color/colorPrimary"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+            <fragment
+                android:id="@+id/nav_host_fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph_main" />
+        </LinearLayout>
+
+        <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:gravity="start|center_vertical"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/logo_safie_white_image"
+                        android:layout_width="156dp"
+                        android:layout_height="78dp"
+                        android:paddingStart="12dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/icn_logo"
+                        android:paddingLeft="12dp" />
+
+                    <TextView
+                        android:id="@+id/account_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="12dp" />
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/camera_list_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="12dp">
+
+                    <ImageView
+                        android:id="@+id/camera_list_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/camera_list_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="カメラ一覧"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginLeft="8dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/movie_clip_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="12dp">
+
+                    <ImageView
+                        android:id="@+id/movie_clip_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/movie_clip_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="ムービークリップ"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginLeft="8dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/user_setting_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="12dp">
+
+                    <ImageView
+                        android:id="@+id/user_setting_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/user_setting_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="ユーザー設定"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginLeft="8dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/logout_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="12dp">
+
+                    <ImageView
+                        android:id="@+id/logout_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/logout_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="ログアウト"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginLeft="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/register_camera_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/big_button_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <ImageView
+                        android:id="@+id/register_camera_img"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_weight="0" />
+
+                    <TextView
+                        android:id="@+id/register_camera_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/sidemenu_register_camera"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginLeft="8dp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </com.google.android.material.navigation.NavigationView>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <data>
+
+    </data>
+</layout>

@@ -1,0 +1,202 @@
+<resources>
+    <string name="app_name">FenrirTenplate</string>
+
+    <string name="fenrir">Fenrir-Android</string>
+
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="exit_info">もう一度タップしてアプリを閉じる</string>
+
+    <!-- Login Start-->
+    <string name="login_title">Login</string>
+    <string name="login_mail_address">MailAddress</string>
+    <string name="login_password">Password</string>
+    <!-- Login End-->
+
+    <string name="common_camera">Camera</string>
+    <string name="common_message">Message</string>
+    <string name="common_confirm">Confirmation</string>
+    <string name="common_ok">OK</string>
+    <string name="common_yes">Yes</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_login">Login</string>
+    <string name="common_logout">Logout</string>
+    <string name="common_terms_of_use">Terms Of Use</string>
+    <string name="common_privacy_policy">Privacy Policy</string>
+    <string name="common_agree">Agree</string>
+    <string name="common_save">Save</string>
+    <string name="common_language_japanese">Japanese</string>
+    <string name="common_others">Others</string>
+    <string name="common_alter">Alter</string>
+    <string name="common_cars_number"></string>
+    <string name="common_private">Private</string>
+    <string name="common_public">Public</string>
+    <string name="common_share">Share</string>
+    <string name="common_do_sharing">Share</string>
+    <string name="common_crop">Crop</string>
+    <string name="common_finish">Finish</string>
+    <string name="common_search">Search</string>
+    <string name="common_setting">Setting</string>
+    <string name="common_reset">Reset</string>
+    <string name="common_retry">Retry</string>
+    <string name="common_calendar">Calendar</string>
+    <string name="common_inquiry">Inquiry</string>
+    <string name="common_send">Send</string>
+    <string name="common_close">Close</string>
+    <string name="common_back">Back</string>
+    <string name="common_add">Add</string>
+    <string name="common_create">Create</string>
+    <string name="common_update">Update</string>
+    <string name="common_register">Register</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_model">Model</string>
+    <string name="common_serial">Serial</string>
+    <string name="common_type">Type</string>
+    <string name="common_option">Option</string>
+    <string name="common_firmware">Firmware</string>
+    <string name="common_contract_plan">Contracted Plans</string>
+    <string name="common_network">Network</string>
+    <string name="common_disable_show_after_next_time">Don\'t show after next time</string>
+    <string name="common_failed_to_connect">Failed to connect</string>
+    <string name="common_exist">Exist</string>
+    <string name="common_not_exist">Not Exist</string>
+    <string name="common_right_arrow">-></string>
+    <string name="common_range_presentation">-</string>
+    <string name="common_ip_address">IP Address</string>
+    <string name="common_operating_system">OS</string>
+    <string name="common_client">Client</string>
+    <string name="common_gateway">Gateway</string>
+    <string name="common_router">Router</string>
+    <string name="common_encoder">Encoder</string>
+    <string name="common_owner_device">Owner Device</string>
+    <string name="common_shared_device">Shared Device</string>
+    <string name="common_normal_mode">Normal mode</string>
+    <string name="common_low_delay_mode">Low delay mode</string>
+    <string name="common_error">Error</string>
+    <string name="common_complete_to_delete">Completed to delete.</string>
+
+    <string name="common_short_sunday">Sun</string>
+    <string name="common_short_monday">Mon</string>
+    <string name="common_short_tuesday">Tue</string>
+    <string name="common_short_wednesday">Wed</string>
+    <string name="common_short_thursday">Thu</string>
+    <string name="common_short_friday">Fri</string>
+    <string name="common_short_saturday">Sat</string>
+    <string name="common_weekday_presentation">Weekday</string>
+    <string name="common_date_presentation">M/d(EEE)</string>
+    <string name="common_full_date_presentation">M/d(EEE) HH:mm:ss</string>
+    <string name="common_day_time_presentation">Day</string>
+    <string name="common_hour_time_presentation">Hour</string>
+    <string name="common_minute_time_presentation">Minute</string>
+    <string name="common_second_time_presentation">Second</string>
+    <string name="common_time_presentation">Time</string>
+
+    <!-- 言語系-->
+    <string name="language_japanese">Japanese</string>
+    <string name="language_english">English</string>
+
+    <!-- SideMenu Screen-->
+    <string name="sidemenu_camera_list">All Cameras</string>
+    <string name="sidemenu_movie_clip">Movies</string>
+    <string name="sidemenu_tag_list">All Tags</string>
+    <string name="sidemenu_user_setting">User Settings</string>
+    <string name="sidemenu_register_camera">Register a Camera</string>
+    <string name="sidemenu_logout_message">Confirmation\nIs it OK to logout?</string>
+
+    <!-- Top Screen-->
+    <string name="top_login">Login</string>
+    <string name="top_register_new_user">Sign Up</string>
+
+    <!-- Top Login Screen-->
+    <string name="top_login_email_placeholder">Email</string>
+    <string name="top_login_password_placeholder">Password</string>
+    <string name="top_login_forgotten_password">If you forget password</string>
+
+    <!-- Password Forgotten Screen-->
+    <string name="password_forgotten">Forgot password</string>
+    <string name="password_forgotten_reset_password">Reset Password</string>
+    <string name="password_forgotten_has_sent_reset_mail_title">Complete to send mail for reset!</string>
+    <string name="password_forgotten_has_sent_reset_mail_message">We have sent e-mail to your input mail address. Please complete resetting password via e-mail.</string>
+
+    <!-- Top Register Screen-->
+    <string name="top_register_password_confirm_placeholder">Confirm Password</string>
+    <string name="top_register_registration_suggestion">Please press Send Confirmation E-mail button\n after you agree with Terms Of Use and Privacy Policy</string>
+    <string name="top_register_password_annotation">*Make sure it\'s more than 8 AND less than 32 characters</string>
+    <string name="top_register_agree_terms">Agree Terms</string>
+    <string name="top_register_send_confirmation_mail">Send Confirmation E-mail</string>
+    <string name="top_register_password">Password</string>
+    <string name="top_register_confirm_password">Password (Confirmation)</string>
+
+    <!-- Camera List Screen-->
+    <string name="camera_list">Camera List</string>
+    <string name="camera_list_show_all">All Cameras</string>
+    <string name="camera_list_select_list_row">Select Display style</string>
+    <string name="camera_list_select_update_timing">Select update timing</string>
+    <string name="camera_list_list">Display as List</string>
+    <string name="camera_list_line">Rows Collection</string>
+    <string name="camera_list_frequency_high">Update thumbnail per one second.</string>
+    <string name="camera_list_frequency_low">*Normally update thumbnail per 30 seconds.</string>
+    <string name="common_determine">Determine</string>
+    <string name="camera_list_connecting">Connecting now...</string>
+    <string name="camera_list_not_able_to_connect">Failed to connect</string>
+    <string name="camera_list_no_permission">No permissions</string>
+    <string name="camera_list_camera_is_off">Camera is off</string>
+    <string name="camera_list_updating_firmware">Updating firmware</string>
+    <string name="camera_list_order_guide_description">Drag camera to change order.</string>
+    <string name="camera_list_cell_model">Model: %@</string>
+    <string name="camera_list_cell_serial">Serial: %@</string>
+    <string name="camera_list_cell_firmware">Firmware: %@</string>
+
+
+    <!-- Account Setting Screen-->
+    <string name="account_setting_alter_email">Alter e-mail</string>
+    <string name="account_setting_alter_password">Alter Password</string>
+    <string name="account_setting_alter_or_register_credit_card">Register or Alter CreditCard Infomation</string>
+
+    <!-- Alter Email Screen-->
+    <string name="alter_email_current_address">Current e-mail</string>
+    <string name="alter_email_new_address">New e-mail</string>
+    <string name="alter_email_send_confirmation_mail">Send Confirmation mail</string>
+
+    <!-- Alter Password Screen-->
+    <string name="alter_password_current_password">Current Password</string>
+    <string name="alter_password_new_password">New Password (Over 8 Alphanumeric characters)</string>
+
+
+    <!-- Alert message-->
+    <string name="alert_open_web_on_browser">Open Web page on browser</string>
+    <string name="alert_message_no_address">Please fill Email</string>
+    <string name="alert_message_no_password">Please fill Password</string>
+    <string name="alert_message_no_password_confirmation">Please fill Password Confirmation</string>
+    <string name="alert_title_confirm_password">Confirm Password</string>
+    <string name="alert_message_password_confirmation_failed">Confirmation password is not same</string>
+    <string name="alert_message_invalid_length">Please enter Password with more than 8 And less than 32 characters</string>
+    <string name="alert_title_network_error">Network disconnection</string>
+    <string name="alert_message_network_disconnection">Network is disconnected. Please turn off in-flight mode or use  Wi-Fi.</string>
+    <string name="alert_title_failed_to_create_account">Failed to create Account</string>
+    <string name="alert_message_failed_to_create_account">Failed to create account. Please confirm input content</string>
+    <string name="alert_message_already_registered">Your email address is already exist.</string>
+    <string name="alert_title_success_create_account">Sent Registration Email</string>
+    <string name="alert_message_success_create_account">We have sent an email to your address. Please confirm it and complete registration. After registration, you can login!</string>
+    <string name="alert_message_reset_password_guide">We will send an email to your address to reset password</string>
+    <string name="alert_title_login_failure">Login Error</string>
+    <string name="alert_message_login_failure">Failed to Login. Please confirm inputted content.</string>
+    <string name="alert_message_determine_storing_title">Please Enter the name of this search condition</string>
+    <string name="alert_title_bluetooth_error">Bluetooth Error</string>
+    <string name="alert_message_bluetooth_connection_error">Disconnected from the camera.\nSee Bluetooth Settings.</string>
+    <string name="alert_message_bluetooth_power_off_error">Turn on Bluetooth for initializing.</string>
+    <string name="alert_message_bluetooth_unsupported_error">This device can\'t initialize the camera.\nUse Bluetooth 4.0 corresponding devices.</string>
+    <string name="alert_title_wifi_error">Wi-Fi Setting Failed</string>
+    <string name="alert_message_wifi_password">Failed to Wi-Fi setting.\nConfirm password of the access point.</string>
+    <string name="alert_message_wifi_ssid_password">Fialed to Wi-Fi setting.\nConfirm SSID and Password of the access point.</string>
+    <string name="alert_title_network_check_error">Failed to connection</string>
+    <string name="alert_message_network_check_error_wifi">Camera setting is finished but network connection is failed.\nConfirm SSID and password of access point.</string>
+    <string name="alert_message_network_check_error_wired">Camera setting is finished but network connection is failed.\nConfirm connection of LAN cable.</string>
+    <string name="alert_title_activation_cancel">Cancel setting</string>
+
+
+</resources>

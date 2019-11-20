@@ -1,0 +1,191 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.fenrir.fenrirtemplate"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    // 署名
+    signingConfigs {
+        debug {
+//            storeFile file('keystore/release.keystore')
+//            storePassword "android"
+//            keyAlias "androiddebugkey"
+//            keyPassword "androiddebugkey"
+        }
+
+        release {
+        }
+    }
+
+    // ビルドタイプ
+    buildTypes {
+        debug {
+            multiDexEnabled true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            multiDexEnabled true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // ビルド環境
+    productFlavors {
+        // 本番環境
+        production {
+            resValue "string", "version_code", "Version ${defaultConfig.versionName}"
+            buildConfigField "String", "BASE_URL", '"https://"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "false"
+            signingConfig signingConfigs.release
+        }
+        // 検証環境
+        staging {
+            applicationIdSuffix ".staging"
+
+            resValue "string", "version_code", "Version ${defaultConfig.versionName} .staging"
+            buildConfigField "String", "BASE_URL", '"https://"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
+            signingConfig signingConfigs.release
+        }
+        // 開発環境
+        develop {
+            applicationIdSuffix ".develop"
+
+            resValue "string", "version_code", "Version ${defaultConfig.versionName} .develop"
+            buildConfigField "String", "BASE_URL", '"https://"'
+            buildConfigField "boolean", "ALLOW_ALL_CERTIFICATES", "true"
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "default"
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+
+}
+
+dependencies {
+
+    def rx_version = "2.2.13"
+    def retrofit_version = "2.6.2"
+    def okhttp_version = '4.2.2'
+    def kodein_version = "6.4.1"
+    def lifecycle_version = "2.1.0"
+    def room_version = "2.2.1"
+    def activity_version = "1.0.0"
+    def kotpref_version = "2.9.2"
+    def nav_version = "2.2.0-rc01"
+    def exoplayer_version = "2.10.7"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    //AndroidX
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.fragment:fragment-ktx:1.2.0-rc01'
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.drawerlayout:drawerlayout:1.0.0"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-runtime:$nav_version"
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+
+    //Database
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //DI
+    implementation "org.kodein.di:kodein-di-generic-jvm:${kodein_version}"
+    implementation "org.kodein.di:kodein-di-framework-android-x:${kodein_version}"
+
+    //Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rx_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+
+    //SharedPreference
+    implementation "com.chibatching.kotpref:kotpref:${kotpref_version}"
+    implementation "com.chibatching.kotpref:initializer:${kotpref_version}"
+
+    //Retrofit OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${okhttp_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okhttp_version}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    implementation("com.squareup.retrofit2:retrofit:${retrofit_version}") {
+        exclude module: 'okhttp'
+    }
+
+    //ImageLoader
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    //Json Serializer
+    implementation("com.squareup.moshi:moshi-kotlin:1.9.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.0")
+
+    //WebRTC
+    implementation 'org.webrtc:google-webrtc:1.0.28513'
+    //Exoplayer for HLS
+    implementation "com.google.android.exoplayer:exoplayer-core:${exoplayer_version}"
+    implementation "com.google.android.exoplayer:exoplayer-hls:${exoplayer_version}"
+    implementation "com.google.android.exoplayer:exoplayer-ui:${exoplayer_version}"
+
+    //Log
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Debug Stetho
+    debugImplementation 'com.facebook.stetho:stetho:1.5.1'
+    debugImplementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+
+    //Test
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3.1'
+    testImplementation 'org.mockito:mockito-inline:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
